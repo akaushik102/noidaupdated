@@ -1,0 +1,594 @@
+<main id="main">
+
+    <!-- Fullwidth Slider -->
+
+    <div class="home-section" id="home">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Left: Banner Image Slider -->
+                <div class="col-md-6">
+                    <div class="banner-slide-block">
+
+                        <div class="banner-slider">
+
+                            <div class="slider-box">
+                                <img [src]="bannerImages[currentSlide].src" [alt]="bannerImages[currentSlide].alt"
+                                    class="img-fluid" fetchpriority="high">
+                            </div>
+
+                            <!-- Previous Button -->
+                            <button type="button" class="slider-control prev" aria-label="Previous banner"
+                                (click)="previousSlide()">
+                                &#10094;
+                            </button>
+
+                            <!-- Next Button -->
+                            <button type="button" class="slider-control next" aria-label="Next banner"
+                                (click)="nextSlide()">
+                                &#10095;
+                            </button>
+
+                        </div>
+
+                        <!-- Slider Indicators -->
+                        <div class="slider-indicators">
+                            <button *ngFor="let banner of bannerImages; let i = index" type="button"
+                                [class.active]="currentSlide === i" [attr.aria-label]="'Go to banner ' + (i + 1)"
+                                [attr.aria-current]="currentSlide === i ? 'true' : null" (click)="goToSlide(i)">
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Banner Content Image -->
+                <div class="col-md-6 banner_content">
+                    <img src="advantage-assets/images/banner-content.png" class="img-fluid"
+                        alt="Amity Advantage banner content" loading="eager">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Fullwidth Slider -->
+
+    <!-- Advantage Section -->
+    <section class="page-section" id="choose">
+        <div class="container position-relative">
+
+            <div class="row text-center mb-60 mb-xs-30">
+                <div class="col-md-12">
+                    <h1 class="section-title mb-0"><span>Amity University
+                            Noida Advantage</span></h1>
+                </div>
+            </div>
+
+
+            <div class="row g-5 mt-50">
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">1</div>
+                        <div class="advantage_box_details">
+                            <h5>World-Class Campus</h5>
+                            <p>Welcome to Amity University Noida – where learning meets world-class infrastructure...
+                            </p>
+                            <a routerLink="world-class-campus">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic1.jpg" class="img-fluid"
+                                    alt="advantage pic 1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">2</div>
+                        <div class="advantage_box_details">
+                            <h5>Caring Community & Student Well-being</h5>
+                            <p>At Amity University Noida, students are at the heart of everything we do...</p>
+                            <a routerLink="caring-community">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic2.jpg" class="img-fluid"
+                                    alt="advantage pic 2" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">3</div>
+                        <div class="advantage_box_details">
+                            <h5>Global Exposure</h5>
+                            <p>In today’s interconnected world, global exposure is essential, and Amity University
+                                Noida...</p>
+                            <a routerLink="global-exposure">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic3.jpg" class="img-fluid"
+                                    alt="advantage pic 3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">4</div>
+                        <div class="advantage_box_details">
+                            <h5>Industry-Integrated Learning</h5>
+                            <p>Amity University Noida bridges the gap between academics and industry like no other...
+                            </p>
+                            <a routerLink="industry-integrated-learning">READ
+                                MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic4.jpg" class="img-fluid"
+                                    alt="advantage pic 4" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">5</div>
+                        <div class="advantage_box_details">
+                            <h5>Career Development & Placements</h5>
+                            <p>One of Amity University Noida’s biggest strengths is its outstanding placement record...
+                            </p>
+                            <a routerLink="career-development">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic5.jpg" class="img-fluid"
+                                    alt="advantage pic 5" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">6</div>
+                        <div class="advantage_box_details">
+                            <h5>Innovation & Research</h5>
+                            <p>Innovation is in Amity University Noida’s DNA. With a strong emphasis on research...</p>
+                            <a routerLink="innovation-research">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic6.jpg" class="img-fluid"
+                                    alt="advantage pic 6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">7</div>
+                        <div class="advantage_box_details">
+                            <h5>Sports & Extra-Curricular Excellence</h5>
+                            <p>At Amity University Noida, education goes hand-in-hand with sports, culture...</p>
+                            <a routerLink="sports-curricular">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic7.jpg" class="img-fluid"
+                                    alt="advantage pic 7" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">8</div>
+                        <div class="advantage_box_details">
+                            <h5>Inclusive Scholarships & Financial Aid</h5>
+                            <p>At Amity University Noida, we believe talent should never be held back...</p>
+                            <a routerLink="scholarships-financial-aid">READ
+                                MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic8.jpg" class="img-fluid"
+                                    alt="advantage pic 8" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">9</div>
+                        <div class="advantage_box_details">
+                            <h5>Residential Life & Facilities</h5>
+                            <p>Life at Amity University Noida is more than just academics...</p>
+                            <a routerLink="life-facilities">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic9.jpg" class="img-fluid"
+                                    alt="advantage pic 9" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">10</div>
+                        <div class="advantage_box_details">
+                            <h5>Cultural Diversity & Vibrant Community</h5>
+                            <p>Amity University Noida is a melting pot of cultures, ideas, and traditions...</p>
+                            <a routerLink="cultural-diversity">READ MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic10.jpg" class="img-fluid"
+                                    alt="advantage pic 10" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">11</div>
+                        <div class="advantage_box_details">
+                            <h5>Sustainability & Green Campus</h5>
+                            <p>Amity University Noida is committed to sustainability and eco-conscious living...</p>
+                            <a routerLink="sustainability-green-campus">READ
+                                MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic11.jpg" class="img-fluid"
+                                    alt="advantage pic 11" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="advantage_box">
+                        <div class="advantage_box_pic_num">12</div>
+                        <div class="advantage_box_details">
+                            <h5>Alumni Success Stories</h5>
+                            <p>The true strength of a university lies in its alumni, and Amity University Noida...</p>
+                            <a routerLink="alumni-success-stories">READ
+                                MORE</a>
+                        </div>
+
+                        <div class="advantage_box_pic">
+                            <div>
+                                <img src="advantage-assets/images/advantage-pic12.jpg" class="img-fluid"
+                                    alt="advantage pic 12" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Advantage Section -->
+    <section class="page-section recruiter bg-dark-1 bg-dark-alpha-90 parallax-5 light-content"
+        style="background-image: url(&quot;advantage-assets/images/section-bg-2.jpg&quot;); background-position: 50% 52px;"
+        id="recruiters">
+        <div class="container position-relative">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title mb-30 animated"
+                        style="visibility: visible; animation-name: fadeInUp; color: white;">Top Recruiters</h2>
+                </div>
+
+                <div class="col-md-5">
+                    <p>
+                        Amity University Noida is consistently recognized by Times Higher Education Rankings as a top
+                        global university for producing highly employable graduates. This success isn't accidental, it's
+                        driven by our Corporate Resource Centre (CRC), which offers robust, 100% placement support to
+                        every student. The CRC is dedicated to bridging the industry-academia gap through targeted
+                        initiatives: securing industry exposure, facilitating internship opportunities, and providing
+                        rigorous support including mock interviews, personality enhancement, and essential skill
+                        development.</p>
+                </div>
+
+
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="client-brand-single-box">
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo1.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo2.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo3.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo4.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo5.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo6.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo7.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo8.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo9.jpg"
+                                    alt="recruiters logo"></div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo10.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo11.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo12.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo13.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo14.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo15.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo16.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                            <div class="brand-thumb"><img src="advantage-assets/images/recruiters-logo18.jpg"
+                                    alt="recruiters logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="page-section pt-0 pb-0  mt-30 mb-30" id="testimonial">
+        <div class="container position-relative">
+
+            <div class="pt-60 pb-60 pt-sm-50 pb-sm-50 px-4 bg-gray-light-1">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1 text-center">
+                                <h2 class="section-title">Student Testimonials</h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="banner-slide-block">
+                                    <div class="owl-carousel owl-slider owl-theme">
+
+                                        <div class="item">
+                                            <div>
+                                                <blockquote class="mb-0">
+                                                    <div class="blockquote-icon" aria-hidden="true">”</div>
+                                                    <p>Being a part of the Amity family for 4 years, was no less than an
+                                                        achievement in itself. I feel that Amity was the perfect
+                                                        launch-pad for my engineering career, and I owe all my success
+                                                        to it.</p>
+
+                                                    <div class="section-line mt-40"></div>
+                                                    <footer class="ts1-author mt-20 clearfix">
+                                                        <div class="ts1-author-img float-start">
+                                                            <img class="rounded-circle" width="60" height="60"
+                                                                src="advantage-assets/images/akshat-pratap.jpg"
+                                                                alt="Akshat Pratap Singh">
+                                                        </div>
+                                                        <div class="overflow-hidden">
+                                                            Akshat Pratap Singh | B.Tech IT (2010)
+                                                            <div class="small">
+                                                                Senior Director, I&D Global Practice, North America<br>
+                                                                Capgemini USA
+                                                            </div>
+                                                        </div>
+                                                    </footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="item">
+                                            <div>
+                                                <blockquote class="mb-0">
+                                                    <div class="blockquote-icon" aria-hidden="true">”</div>
+                                                    <p>My two years at Amity balanced learning with fun and practical
+                                                        exposure. Classes weren't just theoretical, we'd start with
+                                                        concepts, then dive into real-world applications. I'm especially
+                                                        thankful to the placement team.</p>
+
+                                                    <div class="section-line mt-40"></div>
+                                                    <footer class="ts1-author mt-20 clearfix">
+                                                        <div class="ts1-author-img float-start">
+                                                            <img class="rounded-circle" width="60" height="60"
+                                                                src="advantage-assets/images/isha-agarwal.jpg"
+                                                                alt="Isha Agarwal">
+                                                        </div>
+                                                        <div class="overflow-hidden">
+                                                            Isha Agarwal | M.Com (2021)
+                                                            <div class="small">
+                                                                Tax Senior, Deloitte
+                                                            </div>
+                                                        </div>
+                                                    </footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="item">
+                                            <div>
+                                                <blockquote class="mb-0">
+                                                    <div class="blockquote-icon" aria-hidden="true">”</div>
+                                                    <p>I want to credit a large part of my accomplishment to my time at
+                                                        Amity. Please accept my heartfelt gratitude on behalf of me and
+                                                        my parents.</p>
+
+                                                    <div class="section-line mt-40"></div>
+                                                    <footer class="ts1-author mt-20 clearfix">
+                                                        <div class="ts1-author-img float-start">
+                                                            <img class="rounded-circle" width="60" height="60"
+                                                                src="advantage-assets/images/katha-chanda.jpg"
+                                                                alt="Katha Chanda">
+                                                        </div>
+                                                        <div class="overflow-hidden">
+                                                            Katha Chanda | B.Tech CSE (2016)
+                                                            <div class="small">
+                                                                Software Engineer, Meta USA
+                                                            </div>
+                                                        </div>
+                                                    </footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials Section -->
+    <section id="social">
+        <div class="elfsight-app-7a1697bb-5a39-41e6-a888-1df912b4b29a"></div>
+    </section>
+
+    <!-- <section class="page-section social-media" id="social">
+        <div class="container">
+
+            <div class="row text-center mb-40 mb-xs-30">
+                <div class="col-md-12">
+                    <h3 class="section-title mb-0"><span>Social
+                            Media</span></h3>
+                </div>
+            </div>
+
+
+            <div class="row g-5">
+                <div class="col-md-3">
+                    <div class="sm_post">
+                        <img src="advantage-assets/images/post1.jpg" class="img-fluid" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="sm_post">
+                        <img src="advantage-assets/images/post2.jpg" class="img-fluid" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="sm_post">
+                        <img src="advantage-assets/images/post3.jpg" class="img-fluid" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="sm_post">
+                        <img src="advantage-assets/images/post4.jpg" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-30">
+                <div class="col-md-4 offset-md-4">
+                    <div class="banner-contact">
+                        <div class="share-icon">
+                            <h2>Follow Us: </h2>
+                            <ul>
+                                <li><a href="https://www.facebook.com/amityuni/" target="_blank"><i
+                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="https://in.linkedin.com/school/amity-university/" target="_blank"><i
+                                            class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.instagram.com/amityuniversity.noida/" target="_blank"><i
+                                            class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://twitter.com/AmityUni" target="_blank"><i
+                                            class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+    <section class="page-section bg-gray-light-1 global-exposure mt-30" id="">
+        <div class="container">
+
+            <div class="row text-center mb-40 mb-xs-30">
+                <div class="col-md-12">
+                    <h3 class="section-title mb-0"><span>Be part of a
+                            university that blends global
+                            exposure, world-class infrastructure, and caring support.</span></h3>
+                </div>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <a class="btn-secondary" href="https://noida.amity.edu/admissions-2026/" target="_blank">Apply
+                        Now</a>
+                </div>
+
+                <div class="col-md-4">
+                    <a class="btn-secondary" href="#">Request a Call Back</a>
+                </div>
+
+                <div class="col-md-4">
+                    <a class="btn-secondary" href="https://noida.amity.edu/program-brochures" target="_blank">Download
+                        Brochure</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>

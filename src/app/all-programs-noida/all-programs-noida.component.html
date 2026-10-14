@@ -1,0 +1,152 @@
+<div class="breadcumb-wrapper">
+    <div class="container">
+        <div class="breadcumb-content text-center">
+            <h1 class="breadcumb-title">All Academic Programs</h1>
+            <ul class="breadcumb-menu">
+                <li><a routerLink="/home">Home</a></li>
+                <li>Programs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="background-sec" style="padding: 50px 0px 50px 0px">
+
+    <form>
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-3 text-end">
+                    <h5 class="sec-title" style="padding-top: 2%;">
+                        Find Your Program
+                    </h5>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <input class="form-control" type="text" name="search" placeholder="Search Your Program" required
+                            [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()">
+
+                        <i class="far fa-search"></i>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+
+    @if (!isLoading) {
+
+    <div class="container">
+
+        <div class="row">
+
+            <div *ngIf="showAllCourses" class="col-md-12">
+
+                <ul class="course-li" *ngFor="let item of filteredCourses">
+
+                    <li>
+
+                        <div class="row align-items-center">
+
+                            <!-- Program Name -->
+                            <div class="col-md-7">
+
+                                <p>
+                                    {{ item.sfullname }}
+                                </p>
+
+                            </div>
+
+
+                            <!-- Actions -->
+                            <div class="col-md-5">
+
+                                <!-- ========================= -->
+                                <!-- VIEW DETAILS -->
+                                <!-- ========================= -->
+
+                                <ng-container [ngSwitch]="item.programType || item.stype">
+
+                                    <!-- UG -->
+                                    <a *ngSwitchCase="'UG'" [routerLink]="['/ug', item.SlugName]"
+                                        class="view-detailsBtn">
+                                        View Details
+                                    </a>
+
+                                    <!-- PG -->
+                                    <a *ngSwitchCase="'PG'" [routerLink]="['/pg', item.SlugName]"
+                                        class="view-detailsBtn">
+                                        View Details
+                                    </a>
+
+                                    <!-- PHD -->
+                                    <a *ngSwitchCase="'PHD'" [routerLink]="['/phd', item.SlugName]"
+                                        class="view-detailsBtn">
+                                        View Details
+                                    </a>
+
+                                    <!-- Fallback -->
+                                    <a *ngSwitchDefault [routerLink]="['/ug', item.SlugName]" class="view-detailsBtn">
+                                        View Details
+                                    </a>
+
+                                </ng-container>
+
+
+                                <!-- ========================= -->
+                                <!-- APPLY NOW -->
+                                <!-- ========================= -->
+
+                                <ng-container *ngIf="item.bAdmissionOpen == 1; else admissionClosed">
+
+                                    <a [href]="'https://noida.amity.edu/admissions-2026/?utm_source=organic&utm_medium=Google_SERP&utm_campaign=All_program_Apply_Now&utm_term=keywordcoursecode_' + item.sCourseCode"
+                                        target="_blank" class="apply-nowBtn"
+                                        (click)="onApplyClick('all_program_apply_clicked')">
+
+                                        Apply Now
+
+                                    </a>
+
+                                </ng-container>
+
+
+                                <ng-template #admissionClosed>
+                                </ng-template>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    } @else {
+
+    <div style="text-align: center !important;">
+
+        <p style="color: #0b2d4c; text-align: center;">
+
+            <span class="spinner-border spinner-border-sm"></span>
+
+            Loading...
+
+        </p>
+
+    </div>
+
+    }
+
+</section>

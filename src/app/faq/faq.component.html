@@ -1,0 +1,199 @@
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="breadcumb-wrapper">
+  <div class="container">
+
+    <div class="breadcumb-content text-center">
+
+      <h1 class="breadcumb-title">
+        Frequently Asked Questions
+      </h1>
+
+      <ul class="breadcumb-menu">
+
+        <li>
+          <a routerLink="/home">
+            Home
+          </a>
+        </li>
+
+        <li>
+          FAQs
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ================= FAQ SECTION ================= -->
+
+<section class="space">
+  <div style="padding: 0 0 50px">
+    <div class="container">
+
+      <!-- ================= FAQ SEARCH ================= -->
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-5">
+          <div class="faq-search">
+            <input type="text" class="form-control" placeholder="Search your question..." [(ngModel)]="searchText"
+              (input)="onSearch()" />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ================= FAQ LOADER ================= -->
+
+      @if (isLoading) {
+      <div class="text-center py-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">
+            Loading FAQs...
+          </span>
+        </div>
+
+
+        <p class="mt-3 mb-0">
+          Loading FAQs...
+        </p>
+      </div>
+      }
+
+
+      <!-- ================= API ERROR ================= -->
+
+      @if (!isLoading && errorMessage) {
+      <div class="alert alert-danger text-center" role="alert">
+        {{ errorMessage }}
+      </div>
+      }
+
+
+      <!-- ================= DYNAMIC FAQ ================= -->
+
+      @if (
+      !isLoading &&
+      !errorMessage &&
+      filteredFaqList.length > 0
+      ) {
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div class="accordion-area accordion" id="faqAccordion">
+
+
+            <!-- Loop through API FAQs -->
+
+            @for (
+            faq of filteredFaqList;
+            track faq.SNo;
+            let i = $index
+            ) {
+
+            <div class="accordion-card wow fadeInUp">
+
+
+              <!-- ================= QUESTION ================= -->
+
+              <div class="accordion-header" [id]="'faq-heading-' + faq.SNo">
+
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false"
+                  [attr.data-bs-target]="
+                        '#faq-collapse-' + faq.SNo
+                      " [attr.aria-controls]="
+                        'faq-collapse-' + faq.SNo
+                      ">
+
+                  {{ i + 1 }}.
+
+                  {{ faq.Question }}
+
+                </button>
+
+              </div>
+
+
+              <!-- ================= ANSWER ================= -->
+
+              <div class="accordion-collapse collapse" [id]="
+                      'faq-collapse-' + faq.SNo
+                    " [attr.aria-labelledby]="
+                      'faq-heading-' + faq.SNo
+                    " data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body checklist">
+
+                  <div class="faq-answer" [innerHTML]="faq.Answer">
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+      }
+
+
+      <!-- ================= NO FAQ FOUND ================= -->
+
+      @if (
+      !isLoading &&
+      !errorMessage &&
+      filteredFaqList.length === 0
+      ) {
+
+      <div class="text-center py-5">
+
+        <h5>
+
+          No FAQs found
+
+        </h5>
+
+
+        @if (searchText) {
+
+        <p>
+
+          No FAQ matched
+
+          <strong>
+            "{{ searchText }}"
+          </strong>
+
+        </p>
+
+        }
+
+
+        <button type="button" class="btn btn-primary" (click)="clearSearch()">
+
+          View All FAQs
+
+        </button>
+
+      </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

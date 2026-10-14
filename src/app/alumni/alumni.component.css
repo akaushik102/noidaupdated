@@ -1,0 +1,534 @@
+:host {
+    display: block;
+    font-family: var(--thm-font);
+}
+
+/* Keep alumni profiles visible without the legacy jQuery Owl initializer. */
+.owl-amitians:not(.owl-loaded) {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 16px;
+}
+
+.owl-amitians:not(.owl-loaded)>* {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 991px) {
+    .owl-amitians:not(.owl-loaded)>* {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 575px) {
+    .owl-amitians:not(.owl-loaded)>* {
+        flex-basis: 85%;
+    }
+}
+
+.alumni_figure .col-md-4 {
+
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+
+}
+
+.counter-box p {
+    text-align: center;
+}
+
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+.owl-carousel,
+.owl-carousel .owl-item {
+    -webkit-tap-highlight-color: transparent;
+    position: relative
+}
+
+.owl-carousel {
+    display: none;
+    width: 100%;
+    z-index: 1
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0)
+}
+
+.owl-carousel .owl-item,
+.owl-carousel .owl-wrapper {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0)
+}
+
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-touch-callout: none
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+}
+
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+    display: none
+}
+
+.no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+    display: block
+}
+
+.owl-carousel .owl-dot,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    font: 40px;
+}
+
+.owl-carousel.owl-loading {
+    opacity: 0;
+    display: block
+}
+
+.owl-carousel.owl-hidden {
+    opacity: 0
+}
+
+.owl-carousel.owl-refresh .owl-item {
+    visibility: hidden
+}
+
+.owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab
+}
+
+.owl-carousel.owl-rtl {
+    direction: rtl
+}
+
+.owl-carousel.owl-rtl .owl-item {
+    float: right
+}
+
+.owl-carousel .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both
+}
+
+.owl-carousel .owl-animated-in {
+    z-index: 0
+}
+
+.owl-carousel .owl-animated-out {
+    z-index: 1
+}
+
+.owl-carousel .fadeOut {
+    animation-name: fadeOut
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.owl-height {
+    transition: height .5s ease-in-out
+}
+
+.owl-carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity .4s ease
+}
+
+.owl-carousel .owl-item .owl-lazy:not([src]),
+.owl-carousel .owl-item .owl-lazy[src^=""] {
+    max-height: 0
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+    transform-style: preserve-3d
+}
+
+.owl-carousel .owl-video-wrapper {
+    position: relative;
+    height: 100%;
+    background: #000
+}
+
+.owl-carousel .owl-video-play-icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    background: none;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    transition: transform .1s ease
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+    -ms-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3)
+}
+
+.owl-carousel .owl-video-playing .owl-video-play-icon,
+.owl-carousel .owl-video-playing .owl-video-tn {
+    display: none
+}
+
+.owl-carousel .owl-video-tn {
+    opacity: 0;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity .4s ease
+}
+
+.owl-carousel .owl-video-frame {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%
+}
+
+.items {
+    white-space: nowrap;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.items2 {
+    white-space: nowrap;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 10px 25px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.items2 img {
+    width: 150px;
+}
+
+.items3 {
+    white-space: nowrap;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.items4 {
+    white-space: nowrap;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.item {
+    display: inline-block;
+    padding: 0;
+    float: none;
+    margin: 5px;
+}
+
+
+
+
+/* FAQ Accordion */
+.faqs-page .accrodion {
+    border: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faqs-page .accrodion-title {
+    cursor: pointer;
+    padding: 18px 20px;
+    background: #f8f9fa;
+    transition: background 0.3s ease;
+}
+
+.faqs-page .accrodion-title h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.faqs-page .accrodion-title h4 span {
+    color: #c49a45;
+    margin-right: 8px;
+}
+
+.faqs-page .accrodion-content {
+    display: none;
+    padding: 18px 20px;
+    background: #fff;
+}
+
+.faqs-page .accrodion.active .accrodion-content {
+    display: block;
+}
+
+.faqs-page .accrodion-content .inner p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.faqs-page .accrodion-title:hover {
+    background: #f0f0f0;
+}
+
+
+.faqs-page .accrodion {
+    margin-bottom: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.faqs-page .accrodion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: #f8f9fa;
+}
+
+.faqs-page .accrodion-title h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.faqs-page .accrodion-title h4 span {
+    color: #c49a45;
+    margin-right: 8px;
+}
+
+.faqs-page .faq-icon {
+    flex-shrink: 0;
+    font-size: 24px;
+    color: #c49a45;
+}
+
+.faqs-page .accrodion-content {
+    padding: 18px 20px;
+    background: #fff;
+}
+
+.faqs-page .accrodion-content .inner p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.faqs-page .accrodion-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faqs-page .accrodion-content a:hover {
+    text-decoration: underline;
+}
+
+.faqs-page .accrodion.active .accrodion-title {
+    background: #f1f1f1;
+}
+
+
+.amitians .section-title {
+    margin-bottom: 30px;
+}
+
+.amitians .alumni-carousel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.amitians .alumni-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.amitians .alumni-slide {
+    min-width: 0;
+    display: flex;
+}
+
+.amitians .amitians_list {
+    width: 100%;
+    height: 100%;
+    padding: 20px 15px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amitians .amitians_list img {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+
+.amitians .amitians_list h6 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.amitians .amitians_list p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.amitians .carousel-btn {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amitians .carousel-btn:hover {
+    background: #c49a45;
+    border-color: #c49a45;
+    color: #fff;
+}
+
+.amitians .carousel-dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.amitians .carousel-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.amitians .carousel-dots button.active {
+    background: #c49a45;
+}
+
+@media (max-width: 991px) {
+    .amitians .alumni-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .amitians .alumni-carousel {
+        gap: 6px;
+    }
+
+    .amitians .alumni-track {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .amitians .amitians_list {
+        padding: 15px;
+    }
+
+    .amitians .amitians_list img {
+        max-width: 240px;
+        height: 220px;
+    }
+
+    .amitians .amitians_list h6 {
+        font-size: 16px;
+    }
+}

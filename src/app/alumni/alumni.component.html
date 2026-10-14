@@ -1,0 +1,653 @@
+<div class="page-wrapper">
+
+
+    <div class="stricky-header stricked-menu main-menu main-menu-three main-menu-three--dark">
+        <div class="sticky-header__content"></div>
+        <!-- /.sticky-header__content -->
+    </div>
+    <!-- /.stricky-header -->
+
+
+    <section class="banner">
+        <div class="banner-bg">
+            <img src="/assets/alumni/banner.webp" class="w-100" alt="Amity University Noida alumni banner">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="banner_content">
+                        <h1 class="wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">Once an Amitian,<br>
+                            <strong>Always an Amitian</strong>
+                        </h1>
+                        <p class="wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            The Amity University Noida alumni network is one of India's largest and most active graduate
+                            communities, with over 200,000 professionals working across industries and continents.
+                            Whether you graduated last
+                            year or two decades ago, this is your network to grow, give back, and stay connected.
+                        </p>
+                        <a href="https://amitynoida.almaconnect.com/" target="_blank" class="btn">Join the Alumni
+                            Network</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="alumni-network padding pb-0">
+        <div class="container">
+            <div class="section-title text-center wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <h2 class="section-title__title">An Alumni Network <strong>That Spans The World</strong></h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p>Over two decades, Amity University Noida has built a graduate community that reaches well beyond
+                        its campus in Sector 125. The Amity alumni association today connects professionals holding
+                        leadership positions at globally recognised organisations, founders running their own companies,
+                        researchers at international institutions, and mentors who continue to shape the careers of
+                        students coming after them.</p>
+
+                    <p>Understanding the importance of alumni network for career growth, the Amity Alumni Association
+                        was built with a clear purpose: to keep graduates connected to each other, to current students,
+                        and to new opportunities throughout their professional lives.</p>
+
+                    <p>Amity’s alumni network spans industries including technology, banking and finance, consulting,
+                        healthcare, law, media, manufacturing, and entrepreneurship. Geographically, alumni are based
+                        across India and in countries including the United States, Canada, the United Kingdom, Germany,
+                        Singapore, Malaysia, Japan, the UAE, and beyond.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alumni_block">
+            <div class="container">
+
+                <div class="alumni_figure">
+                    <div class="row">
+                        <div class="col-md-4 col-4">
+                            <div class="counter-box">
+                                <h2><span class="count">200,000+</span></h2>
+                                <p>
+                                    Alumni in the
+                                    <br>
+                                    Network
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-4">
+                            <div class="counter-box">
+                                <h2><span class="count">6 Continents</span></h2>
+                                <p>
+                                    Global
+                                    <br>
+                                    Presence
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-4">
+                            <div class="counter-box" style="border: none;">
+                                <h2><span class="count">2 Decades</span></h2>
+                                <p>
+                                    of Industry
+                                    <br>
+                                    Leadership
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <p>The Amity Alumni Association serves as the formal bridge between graduates and the
+                            university, maintaining a living network that connects alumni to each other, to current
+                            students, and to new opportunities. Membership is free and open to all graduates,
+                            postgraduates, diploma holders, and certificate holders from Amity University.</p>
+
+                        <p>The alumni portal at amiconnect.amity.edu brings the network online, giving members access to
+                            a directory of 200,000+ professionals, event registrations, career opportunities, and
+                            community discussions, all in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="amitians padding">
+        <div class="container">
+
+            <!-- Section Heading -->
+            <div class="section-title text-center">
+                <h2 class="section-title__title">
+                    Amitians Who are <strong>Shaping Industries</strong>
+                </h2>
+            </div>
+
+            <!-- Intro -->
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p>
+                        When looking at successful Amity University alumni, what stands out
+                        is not just the organisations they work for but the roles they hold
+                        within them. Directors, presidents, vice presidents, founders, and
+                        researchers across technology, finance, law, hospitality, and science.
+                        These are among the most notable Amity alumni working across the
+                        world today.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alumni Carousel -->
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                    <div class="amitians-block">
+
+                        <div class="alumni-carousel">
+
+                            <button type="button" class="carousel-btn prev-btn" aria-label="Previous alumni"
+                                (click)="previousSlide()">
+                                &#10094;
+                            </button>
+
+                            <div class="alumni-track">
+                                <div class="alumni-slide" *ngFor="let alumnus of visibleAlumni; trackBy: trackByName">
+
+                                    <div class="amitians_list">
+                                        <img [src]="alumnus.image" [alt]="alumnus.name" class="img-fluid"
+                                            loading="lazy">
+
+                                        <h6>{{ alumnus.name }}</h6>
+                                        <p>{{ alumnus.designation }}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="button" class="carousel-btn next-btn" aria-label="Next alumni"
+                                (click)="nextSlide()">
+                                &#10095;
+                            </button>
+
+                        </div>
+
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-dots">
+                            <button type="button" *ngFor="let alumnus of alumni; let i = index"
+                                [class.active]="currentIndex === i"
+                                [attr.aria-label]="'Show alumni starting at ' + alumnus.name"
+                                [attr.aria-current]="currentIndex === i ? 'true' : null" (click)="goToSlide(i)">
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Closing Text -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-10">
+                    <p>
+                        These are not outliers. Across technology, finance, law, hospitality,
+                        research, and entrepreneurship, Amity graduates are building careers
+                        that reflect the breadth of what the university offers. The network
+                        grows stronger with every graduating batch.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="advantage padding">
+        <div class="container">
+            <div class="section-title text-center wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <h2 class="section-title__title text-white">Engaged, Active, <strong class="text-white">and Growing
+                        Every Year</strong></h2>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-10">
+                    <p>Most alumni networks exist on paper. The Amity Alumni Association is different. In 2023-24 alone,
+                        Amity alumni participated in over 230 activities spanning mentorship, industry engagement,
+                        career guidance, and global conferences. And these are not one-off events. They are part of a
+                        calendar that runs year-round, every year, keeping the connection between graduates and the
+                        university genuinely alive.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3 justify-content-center">
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
+                        <h5>Alumni Forums and Webinars</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="500ms">
+                        <h5>Orientation Programmes and Panel Discussions</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="500ms">
+                        <h5>Knowledge Sharing and Value Addition Sessions</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="900ms" data-wow-duration="500ms">
+                        <h5>Career Counselling and Grooming Sessions</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="500ms">
+                        <h5>Workshops and Mentoring</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="1500ms" data-wow-duration="500ms">
+                        <h5>Placements and Internships</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="advantage_box wow fadeInUp" data-wow-delay="1800ms" data-wow-duration="500ms">
+                        <h5>International and National Conferences</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-10">
+                    <p>Every session brings an Amitian back into the university ecosystem, as a speaker, mentor,
+                        panellist, or jury member. Alumni return to share real industry experience, guide students on
+                        placements and internships, and strengthen the bridge between classroom learning and industry
+                        expectation.</p>
+
+                    <p>Beyond the campus calendar, the Annual Alumni Reunion brings batches together each year at Noida.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="career-asset padding">
+        <div class="container">
+            <div class="section-title text-center wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <h2 class="section-title__title">Your Alumni Network Is Your <span><strong>Longest-Running Career
+                            Asset</strong></span></h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-11">
+                    <p>The benefits of the Amity alumni network are not limited to the years spent on campus. For
+                        current students, alumni engagement directly shapes career outcomes. For graduates, the network
+                        offers professional resources, peer connections, and a lifelong relationship with the
+                        institution.</p>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center g-3 mt-3">
+                <div class="col-md-6">
+                    <div class="career_list wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="500ms">
+                        <h5>For Current Students</h5>
+                        <p class="career_list_pr">Alumni mentorship for career growth is embedded into the academic
+                            calendar at Amity. Students benefit from direct access to working professionals who have
+                            navigated the same programs, the same placement drives, and the same early-career decisions
+                            they are now facing.</p>
+
+                        <p class="career_list_pr">Specific benefits include career guidance from the alumni network
+                            through structured counselling sessions, alumni-led internship and placement guidance,
+                            industry exposure through knowledge sharing sessions and panel discussions, and access to
+                            alumni who have built careers at companies like Siemens, Intel, Oracle, Kantar, and Standard
+                            Chartered.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="career_list wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="500ms">
+                        <h5>For Alumni</h5>
+                        <p>The alumni membership benefits extend well beyond graduation. As a member of the Amity Alumni
+                            Association, graduates can access the alumni portal at amiconnect.amity.edu, connect with
+                            200,000+ professionals worldwide, explore job postings and internship opportunities shared
+                            through the network, and attend alumni events and reunions on campus and internationally.
+                        </p>
+
+                        <p>
+                            <strong>Additional professional advantages of<br>
+                                alumni association membership include:
+                            </strong>
+                        </p>
+                        <ul class="career_listing">
+                            <li>Access to AU-BSI professional development courses at
+                                subsidised rates, with 20% discount on all BSI training programs
+                            </li>
+                            <li>Entrepreneurship mentoring support through the
+                                Amity Centre for Entrepreneurship Development (ACED)
+                            </li>
+                            <li>Guidance and counselling services through ACGC,
+                                available 24x7 on a toll-free number
+                            </li>
+                            <li>Innovation and startup support via the Amity Innovation
+                                and Design Centre (AIDC)
+                            </li>
+                            <li>Continued engagement as a speaker, mentor, jury member,
+                                or industry collaborator
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="register pb-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 register_content">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <h2 class="section-title__title">Your Alumni Network Is Your <span><strong>Longest-Running
+                                    Career Asset</strong></span></h2>
+                    </div>
+
+                    <p>Joining the Amity Alumni Association is free and open to all graduates, postgraduates, diploma
+                        holders, and certificate holders from Amity University. The amity alumni registration process
+                        takes just a few minutes and gives you immediate access to one of India's largest graduate
+                        networks.</p>
+                    <!--<h1>How to Register</h1>
+
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">Step 1</div>
+                                <div class="step-text">Visit <a href="https://amiconnect.amity.edu/" target="_blank">amiconnect.amity.edu</a> and click Register</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">Step 2</div>
+                                <div class="step-text">Fill in your academic and personal details</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">Step 3</div>
+                                <div class="step-text">Upload supporting documents for verification</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">Step 4</div>
+                                <div class="step-text">Complete profile activation</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">Step 5</div>
+                                <div class="step-text">Access the full alumni portal and network</div>
+                            </div>
+                        </div>-->
+
+                    <h6>How to Register</h6>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">Step 1</div>
+                            <div class="step-text">Visit <a href="https://amitynoida.almaconnect.com/"
+                                    target="_blank"><strong>amitynoida.almaconnect.com</strong></a> and click
+                                <strong>Sign Up</strong>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Step 2</div>
+                            <div class="step-text">Register using <strong>LinkedIn, Google, or Email</strong></div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Step 3</div>
+                            <div class="step-text">Complete the registration form with your details</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Step 4</div>
+                            <div class="step-text">Verify your account through the confirmation email</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Step 5</div>
+                            <div class="step-text">Log in and start accessing the alumni portal and network</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5">
+                    <img src="/assets/alumni/register-pic.webp" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="faqs-page padding">
+        <div class="container">
+
+            <div class="section-title text-center">
+                <h2 class="section-title__title">
+                    Frequently Asked <strong>Questions</strong>
+                </h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="accrodion-grp">
+
+                        <!-- FAQ 1 -->
+                        <div class="accrodion" [class.active]="activeFaq === 0">
+                            <div class="accrodion-title" (click)="toggleFaq(0)">
+                                <h4>
+                                    <span>.</span> Is Amity alumni membership free?
+                                </h4>
+                                <span class="faq-icon">{{ activeFaq === 0 ? '−' : '+' }}</span>
+                            </div>
+
+                            <div class="accrodion-content" *ngIf="activeFaq === 0">
+                                <div class="inner">
+                                    <p>
+                                        Yes. Membership to the Amity Alumni Association is completely
+                                        free for all eligible graduates.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accrodion" [class.active]="activeFaq === 1">
+                            <div class="accrodion-title" (click)="toggleFaq(1)">
+                                <h4>
+                                    <span>.</span> Who can join the Amity alumni network?
+                                </h4>
+                                <span class="faq-icon">{{ activeFaq === 1 ? '−' : '+' }}</span>
+                            </div>
+
+                            <div class="accrodion-content" *ngIf="activeFaq === 1">
+                                <div class="inner">
+                                    <p>
+                                        Any graduate, postgraduate, diploma or certificate holder
+                                        from Amity University is eligible to register and join.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accrodion" [class.active]="activeFaq === 2">
+                            <div class="accrodion-title" (click)="toggleFaq(2)">
+                                <h4>
+                                    <span>.</span> Can alumni mentor current students?
+                                </h4>
+                                <span class="faq-icon">{{ activeFaq === 2 ? '−' : '+' }}</span>
+                            </div>
+
+                            <div class="accrodion-content" *ngIf="activeFaq === 2">
+                                <div class="inner">
+                                    <p>
+                                        Yes. Alumni can register their interest in mentoring,
+                                        speaking, or participating in career guidance sessions
+                                        through the Alumni Relations Office at
+                                        <a href="mailto:alumniauup&#64;amity.edu">alumniauup&#64;amity.edu</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accrodion" [class.active]="activeFaq === 3">
+                            <div class="accrodion-title" (click)="toggleFaq(3)">
+                                <h4>
+                                    <span>.</span> How does the alumni network help with career growth?
+                                </h4>
+                                <span class="faq-icon">{{ activeFaq === 3 ? '−' : '+' }}</span>
+                            </div>
+
+                            <div class="accrodion-content" *ngIf="activeFaq === 3">
+                                <div class="inner">
+                                    <p>
+                                        Through peer networking, industry events, career counselling
+                                        sessions, job listings on the portal, and direct mentorship
+                                        from senior Amitians, the network supports professional
+                                        development at every career stage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accrodion" [class.active]="activeFaq === 4">
+                            <div class="accrodion-title" (click)="toggleFaq(4)">
+                                <h4>
+                                    <span>.</span> How can alumni attend university events?
+                                </h4>
+                                <span class="faq-icon">{{ activeFaq === 4 ? '−' : '+' }}</span>
+                            </div>
+
+                            <div class="accrodion-content" *ngIf="activeFaq === 4">
+                                <div class="inner">
+                                    <p>
+                                        All alumni events and reunions are communicated through the
+                                        alumni portal and via email. Keeping your profile updated on
+                                        <a href="https://amiconnect.amity.edu" target="_blank"
+                                            rel="noopener noreferrer">amiconnect.amity.edu</a>
+                                        ensures you receive all invitations and updates.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="cta padding">
+        <div class="container">
+
+            <div class="row justify-content-center g-3 mt-4">
+                <div class="col-md-5">
+                    <a href="#" class="cta-btn">
+                        <span>Join the Alumni Network</span>
+                    </a>
+                </div>
+
+                <div class="col-md-5">
+                    <a href="#" class="cta-btn">
+                        <span>Contact Alumni Relations Office</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+ 
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var accordionGroups = document.querySelectorAll('.accrodion-grp');
+
+            accordionGroups.forEach(function (group) {
+                var items = group.querySelectorAll('.accrodion');
+
+                items.forEach(function (item) {
+                    var title = item.querySelector('.accrodion-title');
+                    var content = item.querySelector('.accrodion-content');
+
+                    if (!title || !content) return;
+
+                    // Initially hide all answers except the active one
+                    content.style.display = item.classList.contains('active')
+                        ? 'block'
+                        : 'none';
+
+                    title.addEventListener('click', function () {
+                        var isOpen = item.classList.contains('active');
+
+                        // Close all items in this group
+                        items.forEach(function (otherItem) {
+                            otherItem.classList.remove('active');
+
+                            var otherContent = otherItem.querySelector(
+                                '.accrodion-content'
+                            );
+
+                            if (otherContent) {
+                                otherContent.style.display = 'none';
+                            }
+                        });
+
+                        // Open clicked item if it was previously closed
+                        if (!isOpen) {
+                            item.classList.add('active');
+                            content.style.display = 'block';
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+</div>
