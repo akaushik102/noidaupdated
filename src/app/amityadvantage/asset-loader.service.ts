@@ -3,15 +3,17 @@ import { DOCUMENT } from '@angular/common';
 
 const BASE = 'advantage-assets';
 
-/** CSS is added when the Amity Advantage section opens and REMOVED when you leave it,
- *  so its global rules (html, body, a, h1, .container ...) never touch the rest of the site. */
+/** CSS is added when the Amity Advantage section opens and REMOVED when you leave it.
+ *  These are the `.scoped.css` builds (see scripts/scope-advantage-css.mjs): every rule is
+ *  prefixed with `.advantage-scope`, so the section's global selectors (html, body, a, div, *,
+ *  .container ...) can never restyle the shared header/footer.
+ *  bootstrap.min.css is not loaded - the main site already ships Bootstrap. */
 const STYLES = [
-  'bootstrap.min.css',
-  'style.css',
-  'style-responsive.css',
-  'vertical-rhythm.min.css',
-  'splitting.css',
-  'owl.carousel.min.css',
+  'style.scoped.css',
+  'style-responsive.scoped.css',
+  'vertical-rhythm.min.scoped.css',
+  'splitting.scoped.css',
+  'owl.carousel.min.scoped.css',
 ].map((f) => `${BASE}/css/${f}`);
 
 /** Scripts are order-dependent. They can't be "unloaded", so each loads only once. */
